@@ -3,7 +3,7 @@
     <Navbar />
     <div class="home-buttons">
       <button @click="goToAdminLogin">Admin Login</button>
-      <button @click="goToInfoPage">Information Page</button>
+      <button @click="goToUserLoginPage">User Login</button> <!-- Corrected here -->
     </div>
   </div>
 </template>
@@ -20,8 +20,8 @@ export default {
     goToAdminLogin() {
       this.$router.push({ name: 'AdminLogin' });
     },
-    goToInfoPage() {
-      this.$router.push({ name: 'InfoPage' });
+    goToUserLoginPage() {
+      this.$router.push({ name: 'UserLogin' });
     }
   }
 }
