@@ -43,7 +43,6 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles for the admin login page here */
 .centered {
   text-align: center;
 }

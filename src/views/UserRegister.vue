@@ -1,8 +1,8 @@
 <template>
   <div>
     <Navbar />
-    <h2 class="centered">User Login</h2>
-    <form @submit.prevent="login">
+    <h2 class="centered">New User Registration</h2>
+    <form @submit.prevent="register">
       <div>
         <label for="username">Username:</label>
         <input type="text" id="username" v-model="username" required />
@@ -11,9 +11,13 @@
         <label for="password">Password:</label>
         <input type="password" id="password" v-model="password" required />
       </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" v-model="confirmPassword" required />
+      </div>
       <div class="button-group">
-        <button type="submit">Login</button>
-        <button type="button" @click="goToRegister">New User? Sign up!</button>
+        <button type="submit">Register</button>
+        <button type="button" @click="goToLogin">Already have an account? Login</button>
       </div>
     </form>
   </div>
@@ -23,33 +27,39 @@
 import Navbar from '../components/Navbar.vue';
 
 export default {
-  name: 'UserLogin',
+  name: 'UserRegister',
   components: {
     Navbar
   },
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      confirmPassword: ''
     };
   },
   methods: {
-    login() {
-      // Here you can add your login logic, such as sending the username and password to a server for verification
+    register() {
+      if (this.password !== this.confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      // Here you can add your registration logic, such as sending the username and password to a server for account creation
       console.log(`Username: ${this.username}, Password: ${this.password}`);
 
-      // Assuming the login is successful, navigate to the user info page
-      this.$router.push({ name: 'UserInfo' }); // Make sure 'UserInfo' is defined in your router
+      // Assuming the registration is successful, navigate to the user login page
+      this.$router.push({ name: 'UserLogin' }); // Make sure 'UserLogin' is defined in your router
     },
-    goToRegister() {
-      this.$router.push({ name: 'UserRegister' }); // Make sure 'UserRegister' is defined in your router
+    goToLogin() {
+      this.$router.push({ name: 'UserLogin' });
     }
   }
 }
 </script>
 
 <style scoped>
-/* Add any styles for the user login page here */
+/* Add any styles for the user registration page here */
 .centered {
   text-align: center;
 }
