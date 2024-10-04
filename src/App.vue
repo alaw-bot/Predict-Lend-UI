@@ -18,7 +18,8 @@ export default {
 <style>
 /* Global styles */
 body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: montserrat , sans-serif;
   margin: 0;
+  background-color: #eaeaea;
 }
 </style>

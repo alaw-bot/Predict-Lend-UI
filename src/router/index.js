@@ -6,6 +6,9 @@ import AdminInfo from '../views/AdminInfo.vue';
 import UserInfo from '../views/UserInfo.vue'; // Import the UserInfo component
 import UserRegister from '../views/UserRegister.vue';
 import FillForm from '../views/FillForm.vue';
+import Stats from '../views/Stats.vue';
+import UserInfoInAdmin from '../views/UserInfoInAdmin.vue';
+
 
 const routes = [
   {
@@ -43,6 +46,16 @@ const routes = [
     name: 'FillForm',
     component: FillForm
   },
+  {
+    path: '/UserInfoInAdmin',
+    name: 'UserInfoInAdmin',
+    component: UserInfoInAdmin,
+  },
+  {
+    path: '/stats',
+    name: 'Stats',
+    component: Stats,
+  }
 
 ];
 
